@@ -71,6 +71,11 @@ namespace GLRenderer.Rendering
             int location = GL.GetUniformLocation(ID, name);
             GL.Uniform3(location, value);
         }
+        public void SetUniformVector4(string name, Vector4 value)
+        {
+            int location = GL.GetUniformLocation(ID, name);
+            GL.Uniform4(location, value);
+        }
 
     }
 }

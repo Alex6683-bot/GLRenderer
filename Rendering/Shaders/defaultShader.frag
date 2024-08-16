@@ -5,7 +5,9 @@ in vec2 _texCoords;
 out vec4 FragColor;
 vec3 finalColor;
 
+uniform vec4 color;
+
 void main()
 {
-	FragColor = vec4(1.0f, 0.3f, 0.3f, 1.0f);
+	FragColor = color;
 }

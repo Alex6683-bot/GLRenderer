@@ -8,15 +8,29 @@ using System.Runtime.InteropServices.Marshalling;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GLRenderer
+namespace GLRenderer.Rendering
 {
-    class Scene
+    public abstract class Scene
     {
-        private Entity _camera;
-        public Entity camera 
-        { get; set; }
+        private static List<Scene> _instancedScenes = new List<Scene>();
+        public static List<Scene> instancedScenes { get =>  _instancedScenes; }
+        public static Scene currentScene { get; private set; }
+        public Entity currentCamera { get; set; }
 
+        public Scene()
+        {
+            _instancedScenes.Add(this);
+        }
         public virtual void LoadScene() { }
-        public virtual void UpdateScene() { }
+        public virtual void UpdateScene() 
+        {
+            if (this != currentScene) throw new SceneNotActiveException(this);
+        }
+
+        public static void SetCurrentScene(Scene scene)
+        {
+            currentScene = scene;
+        }
+
     }
 }
