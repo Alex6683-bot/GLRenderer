@@ -1,11 +1,14 @@
 ﻿using GLEntitySystem;
+using GLRenderer.Components;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.GraphicsLibraryFramework;
 
 namespace GLRenderer.Rendering
 {
-    public class CameraController : IComponent
+    public class CameraController : IComponent, ICamera
     {
+        public Entity Entity { get; set; }
+
         private Vector3 _position;
         public float speed { get; set; } = 7.5f;
         public float FOV { get; set; } = 60.0f;
@@ -56,5 +59,6 @@ namespace GLRenderer.Rendering
 
             entity.rotation.X = Math.Clamp(entity.rotation.X, -89.1f, 89.1f);
         }
+
     }
 }

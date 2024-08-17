@@ -7,6 +7,8 @@ namespace GLRenderer.Components
 {
     public class MeshRenderer : IComponent
     {
+        public Entity Entity { get; set; }
+
         private MeshData _meshData;
         public MeshData meshData { get => _meshData; }
 
@@ -14,16 +16,16 @@ namespace GLRenderer.Components
         private Vector3 renderPosition = new Vector3(0);
         private Vector3 renderRotation = new Vector3(0);
         private Vector3 renderScale = new Vector3(1);
-        private CameraController renderCamera;
-
+        private ICamera renderCamera;
         public Material material { get; set; } = new Material();
+
         int VAO;
-        public MeshRenderer(MeshData meshData, Entity camera)
+        public MeshRenderer(MeshData meshData, ICamera camera)
         {
             _meshData = meshData;
-
-            renderCamera = (CameraController)camera.GetComponent<CameraController>();
-            if (renderCamera == null) throw new ComponentNotFoundException<CameraController>(camera);
+            if (camera == null) throw new NullReferenceException();
+            if (camera is not IComponent) throw new Exception("Given camera instance is not a component");
+            renderCamera = camera;
         }
         public void OnStart(Entity entity)
         {
