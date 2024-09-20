@@ -11,7 +11,8 @@ This library offers a set of abstraction and classes to make rendering meshes in
 ## How it works
 GL Renderer comes with the ```Scene``` base class which is deived by a child class through which, the meshes are rendered.
 
-```class SampleScene : Scene
+```
+class SampleScene : Scene
 {
     protected override void LoadScene()
     {
