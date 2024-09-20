@@ -9,7 +9,7 @@ This library offers a set of abstraction and classes to render meshes and scenes
 * [GLEntitySystem](https://github.com/Alex6683-bot/GLEntitySystem)
 
 ## How it works
-GL Renderer comes with the ```Scene``` base class which is derived by a child class through which, the 'entities' are used.
+GL Renderer comes with the ```Scene``` base class which is derived by a child class through which, 'entities' are used.
 
 ```
 class SampleScene : Scene
