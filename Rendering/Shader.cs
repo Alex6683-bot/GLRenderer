@@ -1,18 +1,20 @@
 ﻿using OpenTK.Graphics.OpenGL;
 using OpenTK.Mathematics;
+using System.Diagnostics;
 
 namespace GLRenderer.Rendering
 {
     public class Shader
     {
         public int ID;
-
+        private static List<Shader> _instancedShaders = new List<Shader>();
+        public static List<Shader> instancedShaders { get =>  _instancedShaders; }
         public Shader(string vertexShaderPath, string fragmentShaderPath)
         {
             //Reading Shader Code
             string vertexShaderSource = File.ReadAllText(vertexShaderPath);
             string fragmentShaderSource = File.ReadAllText(fragmentShaderPath);
-
+            
             int vertexShader = GL.CreateShader(ShaderType.VertexShader);
             GL.ShaderSource(vertexShader, vertexShaderSource);
 
@@ -43,6 +45,8 @@ namespace GLRenderer.Rendering
             GL.AttachShader(ID, fragmentShader);
 
             GL.LinkProgram(ID);
+
+            _instancedShaders.Add(this);
         }
 
         public void RunShader()

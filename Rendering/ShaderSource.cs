@@ -2,10 +2,10 @@
 {
     public static class ShaderSource
     {
-        public static Shader defaultShader
+        private static Shader _defaultMeshShader = new Shader(Utilities.ToRelativePath(@"GLRenderer\Rendering\Shaders\defaultShader.vert"), Utilities.ToRelativePath(@"GLRenderer\Rendering\Shaders\defaultShader.frag"));
+        public static Shader defaultMeshShader
         {
-            get => new Shader(Utilities.ToRelativePath(@"GLRenderer\Rendering\Shaders\defaultShader.vert"), Utilities.ToRelativePath(@"GLRenderer\Rendering\Shaders\defaultShader.frag"));
+            get => _defaultMeshShader;
         }
     }
 }
-

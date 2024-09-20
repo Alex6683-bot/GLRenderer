@@ -1,6 +1,6 @@
 ﻿namespace GLRenderer
 {
-    static class Utilities
+    static class Extension
     {
         public static string ToRelativePath(string path)
         {
