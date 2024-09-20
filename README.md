@@ -24,5 +24,4 @@ class SampleScene : Scene
     }
     
 }
-
 ```
