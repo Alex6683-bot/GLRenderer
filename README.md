@@ -1,5 +1,5 @@
 # GL Renderer
-This library offers a set of abstraction and classes to render meshes and scenes easier.
+This library offers a set of abstraction and classes to render meshes and scenes easier in OpenTK.
 
 ## Current issues
 * Directory path issues (will be fixed in the next patch)
