@@ -9,7 +9,7 @@ namespace GLRenderer.Rendering
         private static List<Scene> _instancedScenes = new List<Scene>();
         public static List<Scene> instancedScenes { get => _instancedScenes; }
         public static Scene currentScene { get; private set; }
-        public List<Entity> entities { get; private set; } = new List<Entity>();    
+        private List<Entity> entities = new List<Entity>();    
         private GameWindow _gameWindow;
         public GameWindow GameWindow {get => _gameWindow;}  
 
@@ -26,6 +26,18 @@ namespace GLRenderer.Rendering
             {
                 entity.Update();
             }
+        }
+
+        public Entity Instantiate()
+        {
+            Entity entity = new Entity();
+            entities.Add(entity);
+            return entity;
+        }
+
+        public void Destroy(Entity entity)
+        {
+            entities.Remove(entity);
         }
 
         public static void UpdateCurrentScene(FrameEventArgs args) //Pass the open gl frame event args from window update

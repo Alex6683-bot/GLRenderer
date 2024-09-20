@@ -16,7 +16,7 @@ namespace GLRenderer.Rendering
             foreach (Shader shader in Shader.instancedShaders)
             {
                 int Index = GL.GetUniformBlockIndex(shader.ID, name);
-                Console.WriteLine(Index);
+                //Console.WriteLine(Index);
                 GL.UniformBlockBinding(shader.ID, Index, bindingPoint);
             }
             GL.BufferData(BufferTarget.ArrayBuffer, Unsafe.SizeOf<T>(), ref data, BufferUsageHint.DynamicDraw);
