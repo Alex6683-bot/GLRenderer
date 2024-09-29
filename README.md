@@ -4,7 +4,7 @@ This library offers a set of abstraction and classes to render meshes and scenes
 ## Current issues
 * Directory path issues (will be fixed in the next patch)
 
-## Dependcies
+## Dependencies
 * [Open TK](https://github.com/opentk/opentk) 
 * [GLEntitySystem](https://github.com/Alex6683-bot/GLEntitySystem)
 
