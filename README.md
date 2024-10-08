@@ -1,15 +1,15 @@
 # GL Renderer
-This library offers a set of abstraction and classes to make rendering meshes in OpenTK easier.
+This library offers a set of abstraction and classes to render meshes and scenes easier in OpenTK.
 
 ## Current issues
 * Directory path issues (will be fixed in the next patch)
 
-## Dependcies
+## Dependencies
 * [Open TK](https://github.com/opentk/opentk) 
 * [GLEntitySystem](https://github.com/Alex6683-bot/GLEntitySystem)
 
 ## How it works
-GL Renderer comes with the ```Scene``` base class which is deived by a child class through which, the meshes are rendered.
+GL Renderer comes with the ```Scene``` base class which is derived by a child class through which, 'entities' are used.
 
 ```
 class SampleScene : Scene
@@ -26,7 +26,7 @@ class SampleScene : Scene
 }
 ```
 ### Rendering the scene
-In order to render the created scene, you use the scene in the ```GameWindow``` class from the OpenTK library. See [OpenTK docs](https://opentk.net/learn/chapter1/2-hello-triangle.html?tabs=onload-opentk4%2Conrender-opentk4%2Cresize-opentk4).
+In order to render the created scene, you use the scene in the ```GameWindow``` class you create through the OpenTK library. See [OpenTK docs](https://opentk.net/learn/chapter1/2-hello-triangle.html?tabs=onload-opentk4%2Conrender-opentk4%2Cresize-opentk4).
 
 **The full documentation is under construction and you can currently refer the project's workings in the [sample project](https://github.com/Alex6683-bot/GLRenderer_Sample_Project) I made** 
 
