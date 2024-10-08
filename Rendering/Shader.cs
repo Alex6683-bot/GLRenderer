@@ -4,16 +4,33 @@ using System.Diagnostics;
 
 namespace GLRenderer.Rendering
 {
+
+    public enum ShaderInitType
+    {
+        Source, FilePath
+    }
     public class Shader
     {
         public int ID;
         private static List<Shader> _instancedShaders = new List<Shader>();
         public static List<Shader> instancedShaders { get =>  _instancedShaders; }
-        public Shader(string vertexShaderPath, string fragmentShaderPath)
+        public Shader(ShaderInitType initType, string vertex, string fragment)
         {
             //Reading Shader Code
-            string vertexShaderSource = File.ReadAllText(vertexShaderPath);
-            string fragmentShaderSource = File.ReadAllText(fragmentShaderPath);
+            
+            string vertexShaderSource = "";
+            string fragmentShaderSource = "";
+
+            if (initType == ShaderInitType.FilePath)
+            {
+                vertexShaderSource = File.ReadAllText(vertex);
+                fragmentShaderSource = File.ReadAllText(fragment);
+            }
+            else if (initType == ShaderInitType.Source)
+            {
+                vertexShaderSource = vertex;
+                fragmentShaderSource = fragment;
+            }
             
             int vertexShader = GL.CreateShader(ShaderType.VertexShader);
             GL.ShaderSource(vertexShader, vertexShaderSource);

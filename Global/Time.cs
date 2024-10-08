@@ -1,7 +1,7 @@
 using OpenTK;
 using OpenTK.Windowing.Common;
 
-namespace GLRenderer.Rendering
+namespace GLRenderer
 {
     public static class Time
     {

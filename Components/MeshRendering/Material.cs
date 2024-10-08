@@ -1,4 +1,5 @@
 using GLRenderer.Rendering;
+using OpenTK.Graphics.ES11;
 using OpenTK.Mathematics;
 
 namespace GLRenderer.Components
@@ -12,9 +13,15 @@ namespace GLRenderer.Components
             get => _shader;
             set => _shader = value;
         }
+        public Texture texture = null;
         public void SetUniforms()
         {
             shader.SetUniformVector4("color", color);
+            shader.SetUniformFloat("usesTexture", texture != null ? 1 : 0);
+        }
+        public void Update()
+        {
+            texture?.BindTexture();
         }
     }
 }

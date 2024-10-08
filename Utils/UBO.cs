@@ -8,10 +8,12 @@ namespace GLRenderer.Rendering
     {
         public int ID { get; private set; }
         public int bindingPoint;
+
         public UBO(ref T data, string name, int bindingPoint)
         {
             ID = GL.GenBuffer();
             this.bindingPoint = bindingPoint;
+            
             Bind();
             foreach (Shader shader in Shader.instancedShaders)
             {

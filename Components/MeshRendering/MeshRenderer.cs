@@ -1,4 +1,4 @@
-﻿using GLEntitySystem;
+﻿using GLComponentSystem;
 using GLRenderer.Rendering;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Mathematics;
@@ -104,6 +104,8 @@ namespace GLRenderer.Components
         public void RenderMesh()
         {
             GL.BindVertexArray(VAO);
+            
+            material.Update();
             _material.shader.RunShader();
 
             _material.SetUniforms();

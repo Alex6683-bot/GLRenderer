@@ -1,4 +1,4 @@
-﻿using GLEntitySystem;
+﻿using GLComponentSystem;
 using GLRenderer.Components;
 using OpenTK.Mathematics;
 

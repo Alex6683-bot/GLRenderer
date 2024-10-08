@@ -5,8 +5,6 @@ namespace GLRenderer.Components
 {
     public struct MeshData
     {
-        private float[] _texCoords;
-        private float[] _normals;
         public float[] vertices { get; set; }
         public uint[] indices { get; set; }
         public float[] normals { get; set; } = new float[] { };
@@ -221,5 +219,41 @@ namespace GLRenderer.Components
                 -0.707f,  0.5f,  0.5f
             }   
         };
+        public static MeshData plane = new MeshData()
+        {
+            vertices = new float[]
+            {
+                // X, Y, Z
+                -1.0f,  -1.0f,  0.0f,  // Bottom-left
+                 1.0f,  -1.0f,  0.0f,  // Bottom-right
+                 1.0f,   1.0f,  0.0f,  // Top-right
+                -1.0f,   1.0f,  0.0f   // Top-left
+            },
+
+            indices = new uint[]
+            {
+                0, 1, 2,   // First triangle (bottom-left, bottom-right, top-right)
+                2, 3, 0    // Second triangle (top-right, top-left, bottom-left)
+            },
+            
+            texCoords = new float[]
+            {
+                // U, V (Texture coordinates)
+                0.0f, 0.0f,  // Bottom-left
+                1.0f, 0.0f,  // Bottom-right
+                1.0f, 1.0f,  // Top-right
+                0.0f, 1.0f   // Top-left
+            },
+
+            normals = new float[]
+            {
+                // X, Y, Z (Normals pointing up for all vertices)
+                0.0f, 0.0f, 1.0f,  // Bottom-left
+                0.0f, 0.0f, 1.0f,  // Bottom-right
+                0.0f, 0.0f, 1.0f,  // Top-right
+                0.0f, 0.0f, 1.0f   // Top-left
+            }
+        };
+
     }
 }
