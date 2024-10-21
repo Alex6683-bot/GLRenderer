@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace GLRenderer.Rendering
 {
-    internal class UBO<T> where T : unmanaged
+    public class UBO<T> where T : unmanaged
     {
         public int ID { get; private set; }
         public int bindingPoint;
