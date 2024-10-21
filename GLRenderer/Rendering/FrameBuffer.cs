@@ -5,7 +5,7 @@ using OpenTK.Windowing.Desktop;
 
 namespace GLRenderer
 {
-    class Framebuffer
+    public class Framebuffer
     {
         public int ID;
         public int textureID;
