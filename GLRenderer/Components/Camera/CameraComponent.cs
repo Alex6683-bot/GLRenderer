@@ -20,14 +20,14 @@ namespace GLRenderer.Components
         private WindowSettings windowSettings;
 
         private Scene renderScene;
-        private bool isRenderingToTexture = false;
+        private bool isRenderingToTexture = true;
 
         #endregion
 
         #region Properties
-        public float Speed { get; set; } = 5.5f;
+        public float Speed { get; set; } = 10.5f;
         public float FOV { get; set; } = 60.0f;
-        public float RotationSpeed { get; set; } = 0.025f;
+        public float RotationSpeed { get; set; } = 0.035f;
         public bool RenderToTexture = false;
 
         public Scene RenderScene { get => renderScene; }
@@ -42,12 +42,12 @@ namespace GLRenderer.Components
             this.windowSettings = windowSettings;
         }
 
-        public CameraComponent(Input input, WindowSettings windowSettings, bool RenderToTexture, Scene renderSceneTarget) 
-            : this(input, windowSettings)
-        {
-            this.RenderToTexture = RenderToTexture;
-            this.renderScene = renderSceneTarget;
-        }
+        //public CameraComponent(Input input, WindowSettings windowSettings, bool RenderToTexture, Scene renderSceneTarget) 
+        //    : this(input, windowSettings)
+        //{
+        //    this.RenderToTexture = RenderToTexture;
+        //    this.renderScene = renderSceneTarget;
+        //}
 
         public override void OnStart(Entity entity)
         {
