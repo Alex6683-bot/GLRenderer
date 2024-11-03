@@ -26,5 +26,5 @@ class SampleScene : Scene
 ### Rendering the scene
 In order to render the created scene, you use the scene in the ```GameWindow``` class you create through the OpenTK library. See [OpenTK docs](https://opentk.net/learn/chapter1/2-hello-triangle.html?tabs=onload-opentk4%2Conrender-opentk4%2Cresize-opentk4).
 
-**The full documentation is under construction and you can currently refer the project's workings in the [sample project](https://github.com/Alex6683-bot/GLRenderer_Sample_Project) I made** 
+**The full documentation is under construction and you can currently refer the project's workings under the TestProj csproj in this repo** 
 
