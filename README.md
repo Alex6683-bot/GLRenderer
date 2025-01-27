@@ -3,7 +3,7 @@ This library offers a set of abstraction and classes for rendering meshes and sc
 
 ## Dependencies
 * [Open TK](https://github.com/opentk/opentk) 
-* [GLComponentSystem](https://github.com/Alex6683-bot/GLEntitySystem)
+* [GLComponentSystem](https://github.com/Alex6683-bot/GLEntitySystem) (link is unavailable but it is embedded in the project files)
 * [StbImageSharp](https://github.com/StbSharp/StbImageSharp)
 
 ## How it works
